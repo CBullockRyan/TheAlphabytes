@@ -1,4 +1,14 @@
-﻿CREATE TABLE [dbo].[AspNetRoles](
+﻿CREATE TABLE [dbo].[FODMAPIngredients]
+(
+	[ID]		INT IDENTITY (1,1)	NOT NULL,
+	[Name]		NVARCHAR(50)		NOT NULL,
+	[Aliases]	NVARCHAR(50)		NULL,
+	CONSTRAINT [PK_dbo.FODMAPIngredients] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
+-- #### IDENTITY TABLES BELOW #### --
+
+CREATE TABLE [dbo].[AspNetRoles](
 	[Id] [nvarchar](128) NOT NULL,
 	[Name] [nvarchar](256) NOT NULL,
  CONSTRAINT [PK_dbo.AspNetRoles] PRIMARY KEY CLUSTERED 
