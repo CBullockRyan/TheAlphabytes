@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FODfinder.Models.FODMAPIngredient>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+    <div class="container-fluid pt-4">
+        <h2>Search if an ingredient is a FODMAP</h2>
+
+        @using (Html.BeginForm("Search", "FODMAPIngredients", FormMethod.Get))
+        {
+            @Html.AntiForgeryToken()
+            <div class="container">
+                <div class="row p-1">
+                    <div class="col-10 p-0">
+                        @Html.TextBox("search", null, new { @class = "form-control", type = "text", style = "", name = "search" })
+                    </div>
+                    <div class="col-2 p-0">
+                        <button type="submit" class="btn btn-dark btn-block">Search</button>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (ViewBag.Success ?? false)
+        {
+            <div class="container">
+                <div class="row">
+                    <table class="table table-hover table-bordered">
+                        @foreach (var ingredient in Model)
+                        {
+                            <tr class="col-10">
+                                <td>
+                                    @Html.DisplayFor(modelItem => ingredient.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => ingredient.Aliases)
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Success == false)
+        {
+            <br />
+            <p>
+                We did not find any ingredients that matched your search.
+                This ingredient is <i>probably</i> not a FODMAP. If you would
+                like more information, please see <a href="/FODMAPIngredients/Browse">Common FODMAP Ingredients</a>
+                or our <a href="#">FODMAP info page</a>.</p>
+        }
+    </div>
