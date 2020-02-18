@@ -217,12 +217,15 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FODMAPIngredientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DAL\FFDBContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\FODMAPIngredient.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -234,6 +237,7 @@
     <Content Include="App_Data\FODfinderDB_log.ldf">
       <DependentUpon>FODfinderDB.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\seed.sql" />
     <Content Include="App_Data\up.sql" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -394,6 +398,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\FODMAPIngredients\Browse.cshtml" />
+    <Content Include="Views\FODMAPIngredients\Search.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
