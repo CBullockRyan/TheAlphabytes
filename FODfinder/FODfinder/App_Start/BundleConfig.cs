@@ -1,6 +1,5 @@
 ﻿using System.Web;
 using System.Web.Optimization;
-using System.Web.Optimization.React;
 
 namespace FODfinder
 {
@@ -26,14 +25,6 @@ namespace FODfinder
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
-
-            bundles.Add(new BabelBundle("~/bundles/FoodSearchResults").Include(
-                    "~/Scripts/React/Food/FoodSearchResultItems.jsx",
-                    "~/Scripts/React/Food/FoodSearchResults.jsx"
-                ));
-
-            BundleTable.EnableOptimizations = true;
-
         }
     }
 }
