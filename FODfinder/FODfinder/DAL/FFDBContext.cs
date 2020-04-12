@@ -8,7 +8,7 @@ namespace FODfinder.Models
     public partial class FFDBContext : DbContext
     {
         public FFDBContext()
-            : base("name=FFDBContext_Azure_Dev")
+            : base("name=FFDBContext")
         {
         }
 

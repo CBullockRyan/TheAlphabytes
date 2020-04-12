@@ -18,11 +18,19 @@ namespace FODfinder.Controllers
     {
         private FFDBContext db = new FFDBContext();
 
+        public int countSavedFoods(List<SavedFood> savedFoodsList)
+        {
+            int count = savedFoodsList.Count();
+            return count;
+        }
+
         // GET: SavedFoods
         public ActionResult Index()
         {
             var uid = User.Identity.GetUserId();
-            return View(db.SavedFoods.Where(sf => sf.userID == uid).ToList());
+            List<SavedFood> savedFoodsList = db.SavedFoods.Where(sf => sf.userID == uid).ToList();
+            ViewBag.TotalSavedFoods = countSavedFoods(savedFoodsList);
+            return View(savedFoodsList);
         }
 
         // GET: SavedFoods/Details/5
